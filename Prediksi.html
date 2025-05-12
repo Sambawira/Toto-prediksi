@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prediksi Angka</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
+    <h1 class="text-2xl font-bold text-center text-blue-600 mb-4">Simulasi Prediksi Angka</h1>
+    <p class="text-sm text-gray-600 text-center mb-6">Masukkan jumlah angka yang ingin diprediksi. Ini hanya simulasi edukatif.</p>
+    
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700 mb-1">Jumlah Angka</label>
+      <input type="number" id="jumlah" min="1" max="10" value="5" class="w-full p-2 border border-gray-300 rounded-md">
+    </div>
+
+    <button onclick="prediksiAngka()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md transition duration-200">Prediksi</button>
+
+    <div id="hasil" class="mt-6 text-center text-lg font-medium text-gray-800"></div>
+
+    <p class="text-xs text-gray-500 text-center mt-6">* ini hanya prediksi dan tidak menjamin hasil nyata.</p>
+  </div>
+
+  <script>
+    function prediksiAngka() {
+      const jumlah = parseInt(document.getElementById('jumlah').value);
+      const hasilDiv = document.getElementById('hasil');
+      const angka = [];
+
+      for (let i = 0; i < jumlah; i++) {
+        angka.push(Math.floor(Math.random() * 100) + 1); // Angka 1-100
+      }
+
+      hasilDiv.textContent = 'Hasil Prediksi: ' + angka.join(', ');
+    }
+  </script>
+</body>
+</html>
